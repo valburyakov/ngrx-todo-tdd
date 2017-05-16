@@ -1,0 +1,7 @@
+<app-todo-filter [filters]="filters" [active]="activeFilter$ | async" (changeFilter)="changeFilter($event)"  ></app-todo-filter>
+
+<app-todo-list [todos]="todos$ | async" (toggle)="toggleTodo($event)" (remove)="removeTodo($event)"></app-todo-list>
+
+<app-todo-add (add)="addTodo($event)" [reset]="addTodoSuccess$ | async"></app-todo-add>
+
+<p id="error" class="error" *ngIf="error$ | async as error">{{error}}</p>
